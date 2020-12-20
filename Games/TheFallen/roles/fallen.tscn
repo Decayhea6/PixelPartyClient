@@ -1,0 +1,182 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Fonts/yellowfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Games/TheFallen/roles/fallen.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/slkscre.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 270, 480 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "comrades"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("title:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.669556, 338.888 ), Vector2( 0.917847, 24.5824 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("names:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.141176, 0.141176, 0.141176, 1 ), Color( 0.141176, 0.141176, 0.141176, 1 ), Color( 0.992157, 1, 0.686275, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "starting"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("title:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "- The Fallen -" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("title:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.669556, 338.888 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("dots:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("dots:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ".", "..", "..." ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 140
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 200, 60 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 60
+font_data = ExtResource( 3 )
+
+[node name="root" type="Node"]
+script = ExtResource( 2 )
+
+[node name="screentapped" type="TouchScreenButton" parent="."]
+shape = SubResource( 1 )
+shape_visible = false
+
+[node name="title" type="Label" parent="."]
+anchor_left = -0.00313585
+anchor_right = -0.00313585
+margin_left = 1.0238
+margin_top = 338.888
+margin_right = 541.024
+margin_bottom = 517.887
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.501961, 0.52549, 1 )
+text = "- The Fallen -"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/comrades = SubResource( 2 )
+anims/starting = SubResource( 3 )
+anims/vibing = SubResource( 4 )
+
+[node name="dots" type="Label" parent="."]
+margin_left = 35.0
+margin_top = 715.0
+margin_right = 529.0
+margin_bottom = 1016.0
+custom_fonts/font = SubResource( 5 )
+text = "..."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="names" type="Label" parent="."]
+margin_left = -23.1122
+margin_top = -2.88776
+margin_right = 567.888
+margin_bottom = 824.112
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.141176, 0.141176, 0.141176, 1 )
+text = "
+decay
+fennecferret"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="readybutton" type="TouchScreenButton" parent="."]
+position = Vector2( 67.853, 827.091 )
+shape = SubResource( 6 )
+
+[node name="readylabel" type="Label" parent="."]
+anchor_right = 0.226
+anchor_bottom = 0.752
+margin_left = -2.0
+margin_top = 834.0
+margin_right = 432.96
+margin_bottom = 237.08
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.701961, 0.898039, 0.623529, 1 )
+text = "Ready"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="screentapped" to="." method="_on_screentapped_pressed"]
+[connection signal="pressed" from="readybutton" to="." method="_on_readybutton_pressed"]

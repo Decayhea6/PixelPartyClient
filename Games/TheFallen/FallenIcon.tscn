@@ -1,0 +1,100 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Games/TheFallen/Icons/villager1.png" type="Texture" id=1]
+[ext_resource path="res://Games/TheFallen/Icons/minion.png" type="Texture" id=2]
+[ext_resource path="res://Games/TheFallen/Icons/theif.png" type="Texture" id=3]
+[ext_resource path="res://Games/TheFallen/Icons/protector.png" type="Texture" id=4]
+[ext_resource path="res://Games/TheFallen/Icons/drunkwizard.png" type="Texture" id=5]
+[ext_resource path="res://Games/TheFallen/Icons/aetherboi.png" type="Texture" id=6]
+[ext_resource path="res://Games/TheFallen/Icons/spy.png" type="Texture" id=7]
+[ext_resource path="res://Games/TheFallen/Icons/guardian.png" type="Texture" id=8]
+[ext_resource path="res://Games/TheFallen/Icons/seer.png" type="Texture" id=9]
+[ext_resource path="res://Games/TheFallen/Icons/banshee.png" type="Texture" id=10]
+[ext_resource path="res://Games/TheFallen/Icons/chaos.png" type="Texture" id=11]
+[ext_resource path="res://Games/TheFallen/Icons/fallenseer.png" type="Texture" id=12]
+[ext_resource path="res://Games/TheFallen/Icons/shapeshifter.png" type="Texture" id=13]
+[ext_resource path="res://Games/TheFallen/Icons/terrorist.png" type="Texture" id=14]
+[ext_resource path="res://Games/TheFallen/Icons/worldsoul.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "spy",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "hellspawn",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "aethermage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "slime",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "palladin",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": false,
+"name": "theif",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": false,
+"name": "villager",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "voidling",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "restless",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "fallenseer",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "chmo",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": false,
+"name": "fallen",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "seer",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "guardian",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "wizard",
+"speed": 5.0
+} ]
+
+[node name="FallenIcons" type="AnimatedSprite"]
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 1 )
+animation = "theif"

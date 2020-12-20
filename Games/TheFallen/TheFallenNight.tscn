@@ -1,0 +1,210 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Fonts/Titlefont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites/hat.png" type="Texture" id=2]
+[ext_resource path="res://Games/TheFallen/TheFallenNight.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/m5x7.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "coming_back"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.141176, 0.141176, 0.141176, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label2:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hat:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label3:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Go back to sleep.
+
+Wait until voting
+to wake up again." ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 15.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.1, 1.2, 1.3, 1.4, 1.6, 1.7, 1.8, 1.9, 2, 9.6, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "N", "Ni", "Nig", "Nigh", "Night", "Night F", "Night Fa", "Night Fal", "Night Fall", "Night Falls", "", "(CLOSE YOUR EYES)" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hat:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("hat:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label2:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4, 6, 8, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "3", "2", "1", "" ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label:custom_colors/font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 12.2, 14 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.141176, 0.141176, 0.141176, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Label3:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "", "\"wake up\" only when your role is called, or at the end during voting!" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Label:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 9.8, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 267 ), Vector2( 0, 267 ), Vector2( 0, 435 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 400
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 47
+font_data = ExtResource( 4 )
+
+[node name="TheFallenNight" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/coming_back = SubResource( 1 )
+anims/start = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_top = 267.0
+margin_right = 548.0
+margin_bottom = 308.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.141176, 0.141176, 0.141176, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 13.0
+margin_top = 413.0
+margin_right = 545.0
+margin_bottom = 731.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hat" type="Sprite" parent="."]
+position = Vector2( 270.244, 352.117 )
+scale = Vector2( 0.6313, 0.6313 )
+texture = ExtResource( 2 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 50.0
+margin_top = 660.0
+margin_right = 493.0
+margin_bottom = 821.0
+custom_fonts/font = SubResource( 4 )
+text = "Go back to sleep.
+
+Wait until voting
+to wake up again."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

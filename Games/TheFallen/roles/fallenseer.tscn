@@ -1,0 +1,239 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Fonts/yellowfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Games/TheFallen/FallenIcon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/slkscre.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Games/TheFallen/roles/fallenseer.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 270, 480 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "alibi"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("title:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.917847, 24.5824 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("instructions:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("rolename:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("readylabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("title:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "starting"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("title:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.669556, 338.888 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("instructions:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("readylabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("rolename:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("title:custom_colors/font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.501961, 0.52549, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("title:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 200, 60 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 60
+font_data = ExtResource( 3 )
+
+[node name="fallenseer" type="Node"]
+script = ExtResource( 4 )
+
+[node name="screentapped" type="TouchScreenButton" parent="."]
+shape = SubResource( 1 )
+shape_visible = false
+
+[node name="title" type="Label" parent="."]
+anchor_left = -0.00313585
+anchor_top = -0.00208333
+anchor_right = -0.00313585
+anchor_bottom = -0.00208333
+margin_left = 1.0238
+margin_top = 340.888
+margin_right = 541.024
+margin_bottom = 519.887
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.501961, 0.52549, 1 )
+text = "- The Fallen Seer -"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "starting"
+anims/alibi = SubResource( 2 )
+anims/starting = SubResource( 3 )
+
+[node name="rolename" type="Label" parent="."]
+visible = false
+margin_left = -1.0
+margin_top = 39.0
+margin_right = 536.0
+margin_bottom = 228.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.992157, 1, 0.686275, 1 )
+text = "Lil' Timmy"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="readybutton" type="TouchScreenButton" parent="."]
+position = Vector2( 67.853, 827.091 )
+shape = SubResource( 6 )
+
+[node name="readylabel" type="Label" parent="."]
+visible = false
+anchor_right = 0.226
+anchor_bottom = 0.752
+margin_top = 834.0
+margin_right = 416.96
+margin_bottom = 237.08
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.701961, 0.898039, 0.623529, 1 )
+text = "OK"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="instructions" type="Label" parent="."]
+margin_top = 690.0
+margin_right = 540.0
+margin_bottom = 843.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0.501961, 0.52549, 1 )
+text = "( this is your alibi )"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FallenIcons" parent="." instance=ExtResource( 2 )]
+position = Vector2( 273, 428 )
+[connection signal="pressed" from="screentapped" to="." method="_on_screentapped_pressed"]
+[connection signal="pressed" from="readybutton" to="." method="_on_readybutton_pressed"]

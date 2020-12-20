@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://UI/display.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/slkscr.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/slkscrb.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 90, 90 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 90, 90 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 70, 40 )
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="title" type="Label" parent="."]
+margin_top = 52.5838
+margin_right = 542.0
+margin_bottom = 197.584
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_outline_modulate = Color( 0.701961, 0.898039, 0.623529, 1 )
+text = "Pixel
+Party "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exittext" type="Label" parent="."]
+margin_left = -1.0
+margin_top = 876.261
+margin_right = 539.0
+margin_bottom = 957.261
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Exit
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="starttext" type="Label" parent="."]
+margin_left = 0.106079
+margin_top = 366.124
+margin_right = 540.106
+margin_bottom = 447.124
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Start 
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="setuptext" type="Label" parent="."]
+margin_left = 0.36795
+margin_top = 633.029
+margin_right = 541.368
+margin_bottom = 714.029
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "More
+"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartServer" type="TouchScreenButton" parent="."]
+position = Vector2( 267.133, 385.791 )
+z_index = 2
+shape = SubResource( 3 )
+shape_centered = false
+
+[node name="Settings" type="TouchScreenButton" parent="."]
+position = Vector2( 270.038, 648.649 )
+z_index = 2
+shape = SubResource( 4 )
+shape_centered = false
+
+[node name="Exit" type="TouchScreenButton" parent="."]
+position = Vector2( 266.882, 901.448 )
+shape = SubResource( 5 )
+shape_centered = false
+
+[node name="starticon" type="Sprite" parent="."]
+position = Vector2( 386.195, 342.879 )
+scale = Vector2( 0.121, 0.121 )
+
+[node name="display2" type="Sprite" parent="."]
+position = Vector2( 314.693, 280.571 )
+scale = Vector2( 0.11801, 0.11801 )
+texture = ExtResource( 1 )
+offset = Vector2( -397.165, 868.5 )
+
+[node name="display3" type="Sprite" parent="."]
+position = Vector2( 222.475, 750.245 )
+rotation = 3.14159
+scale = Vector2( 0.11801, 0.11801 )
+texture = ExtResource( 1 )
+offset = Vector2( -397.165, 868.5 )
+[connection signal="pressed" from="StartServer" to="." method="_on_Host_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_Setup_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

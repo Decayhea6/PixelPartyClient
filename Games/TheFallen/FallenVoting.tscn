@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://UI/OkButton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI/buttonContainer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Games/TheFallen/FallenVoting.gd" type="Script" id=3]
+
+[node name="root" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="buttonContainer" parent="." instance=ExtResource( 2 )]
+margin_left = -2.02905
+margin_top = 25.1579
+margin_right = 535.971
+margin_bottom = 841.158
+
+[node name="okconfirm" parent="." instance=ExtResource( 1 )]
+position = Vector2( 72.2297, 857.673 )
+[connection signal="pressed" from="okconfirm" to="." method="_on_okconfirm_pressed"]

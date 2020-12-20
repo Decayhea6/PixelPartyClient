@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/yellowfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Games/TheFallen/roles/aethermage.gd" type="Script" id=2]
+[ext_resource path="res://UI/buttonContainer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI/OkButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Games/TheFallen/FallenIcon.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 270, 480 )
+
+[node name="root" type="Node"]
+script = ExtResource( 2 )
+
+[node name="info" type="Label" parent="."]
+margin_top = 584.888
+margin_right = 544.0
+margin_bottom = 749.888
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.356863, 0.556863, 0.988235, 1 )
+text = "decay has
+polymorphed into
+a slime"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="screenpressed" type="TouchScreenButton" parent="."]
+shape = SubResource( 1 )
+shape_visible = false
+
+[node name="buttonContainer" parent="." instance=ExtResource( 3 )]
+margin_left = -5.82312
+margin_top = 3.9495
+margin_right = 532.177
+margin_bottom = 819.95
+
+[node name="okconfirm" parent="." instance=ExtResource( 4 )]
+position = Vector2( 74.348, 849.711 )
+
+[node name="FallenIcons" parent="." instance=ExtResource( 5 )]
+position = Vector2( 276, 262 )
+animation = "chmo"
+[connection signal="pressed" from="screenpressed" to="." method="_on_screenpressed_pressed"]
+[connection signal="pressed" from="okconfirm" to="." method="_on_okconfirm_pressed"]

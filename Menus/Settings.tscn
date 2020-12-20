@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Menus/UI/UI Theme.theme" type="Theme" id=1]
+[ext_resource path="res://Fonts/slkscr.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/slkscre.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Menus/Settings.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 42
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 180, 50 )
+
+[node name="Settings" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Username" type="LineEdit" parent="."]
+margin_left = 84.4984
+margin_top = 387.545
+margin_right = 467.498
+margin_bottom = 466.545
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/selection_color = Color( 0.941176, 0.941176, 0.941176, 1 )
+custom_colors/cursor_color = Color( 0.976471, 0.976471, 0.976471, 1 )
+max_length = 14
+context_menu_enabled = false
+placeholder_text = "Type Here..."
+placeholder_alpha = 0.364
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameLabel" type="Label" parent="."]
+margin_left = 3.56348
+margin_top = 324.04
+margin_right = 543.563
+margin_bottom = 366.04
+rect_pivot_offset = Vector2( 270, 42 )
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.909804, 0.909804, 0.909804, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "UserName"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ApplyLabel" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 863.0
+margin_right = 537.0
+margin_bottom = 924.0
+custom_fonts/font = SubResource( 3 )
+text = "OK"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ApplyLabel2" type="Label" parent="."]
+margin_left = 2.31812
+margin_top = 863.0
+margin_right = 537.318
+margin_bottom = 924.0
+custom_fonts/font = SubResource( 3 )
+text = "OK"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Apply" type="TouchScreenButton" parent="."]
+position = Vector2( 92.0173, 839.834 )
+shape = SubResource( 4 )
+[connection signal="pressed" from="Apply" to="." method="_on_Apply_pressed"]
