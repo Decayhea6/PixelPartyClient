@@ -275,10 +275,9 @@ Lil' Timmy is holding dinamite.
 
 If Lil' Timmy dies, dinamite goes boom.
 
-When dinamite goes boom, whever Lil' Timmy wants to kill also dies.
+When dinamite goes boom, whoever Lil' Timmy wants to kill is at his mercy.
 
-Lil' Timmy lowkey terrorist.
-" ]
+Don't mess with Lil' Timmy." ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -2203,7 +2202,7 @@ margin_top = 91.6364
 margin_right = 543.682
 margin_bottom = 263.637
 custom_fonts/font = ExtResource( 9 )
-text = "Aether Mage"
+text = "Lil' Timmy"
 align = 1
 valign = 1
 __meta__ = {
@@ -2226,7 +2225,7 @@ __meta__ = {
 [node name="icon" type="Sprite" parent="."]
 position = Vector2( 270.892, 455.769 )
 scale = Vector2( 0.458216, 0.458216 )
-texture = ExtResource( 14 )
+texture = ExtResource( 19 )
 
 [node name="descripiton" type="Label" parent="."]
 visible = false
@@ -2236,10 +2235,14 @@ margin_right = 508.545
 margin_bottom = 860.71
 custom_fonts/font = SubResource( 19 )
 text = "
+Lil' Timmy is holding dinamite.
 
-When you wake up, look at an unused role. Give that role to another player.
+If Lil' Timmy dies, dinamite goes boom.
 
-\"Success is where luck meets preperation. I am neither lucky nor prepared, but I can do cool space-time continium stuff, which has to count for atleast something."
+When dinamite goes boom, whever Lil' Timmy wants to kill also dies.
+
+Lil' Timmy lowkey terrorist.
+"
 align = 1
 autowrap = true
 __meta__ = {

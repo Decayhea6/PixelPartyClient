@@ -6,10 +6,10 @@ const PLAYERBUTTON = preload("res://UI/PlayerButton.tscn")
 func _ready():
 	Input.vibrate_handheld(200)
 	#line below is for debugging (so you don't run the whole thing again just to test this section)
-#	vars.playerInfos = {"1":{"Name":"DECAY"}, "2":{"Name":"PAUL"}, "3":{"Name":"JENNY"}}
+#	vars.playerInfos = {1:{"Name":"DECAY"}, 2:{"Name":"PAUL"}, 3:{"Name":"JENNY"}}
 	state = "start"
 	for player in vars.playerInfos:
-		if player != vars.playerId: #this stops the player from picking themselves
+		if player != vars.get_tree().get_network_unique_id(): #this stops the player from picking themselves
 			var playerbutton = PLAYERBUTTON.instance()
 			$buttonContainer.add_child(playerbutton)
 			playerbutton.playerid = player

@@ -26,7 +26,7 @@ func _on_Apply_pressed():
 #		"music" : vars.MusicEnabled,
 		}
 	var save_game = File.new()
-	save_game.open("res://settings.json", File.WRITE)
+	save_game.open("user://settings.json", File.WRITE)
 	#change res to user when exporting
 #	print(to_json(save_dict))
 	save_game.store_string(to_json(save_dict))

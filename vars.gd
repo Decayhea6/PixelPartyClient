@@ -13,6 +13,7 @@ var PlayerId = 0
 var defended_player = ""
 var chosenPlayer = ""
 var playerInfos = {}
+var winlose = ""
 #I fricked up and named the port variable HostId, but i'm too lazy to go back through every menu and change it, so HostId it is.
 var HostId = 0
 var ServerIp = "127.0.0.1"
@@ -30,10 +31,10 @@ func load_settings():
 	
 ###Change Res to user when exporting!@!@@!!@!!
 		var save_game = File.new()
-		if not save_game.file_exists("res://settings.json"):
+		if not save_game.file_exists("user://settings.json"):
 			return # Error! We don't have a save to load.
 
-		save_game.open("res://settings.json", File.READ)
+		save_game.open("user://settings.json", File.READ)
 		var savedata = parse_json(save_game.get_as_text())
 		print(savedata)
 #		MusicEnabled = savedata["music"]
@@ -101,3 +102,7 @@ func display_role(therole):
 	return(realrole)		
 remote func set_leftover_roles(data):
 	LeftoverRoles = data
+remote func show_winscreen(game, winlose):
+	pass
+remote func setgamestatus(data):
+	winlose = data

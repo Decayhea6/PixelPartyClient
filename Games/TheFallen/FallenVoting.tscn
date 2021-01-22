@@ -1,18 +1,175 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://UI/OkButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/buttonContainer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Games/TheFallen/FallenVoting.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/slkscr.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Fonts/yellowfont.tres" type="DynamicFont" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "starting"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("loadingdotslabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("okconfirm:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("buttonContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("youvotedfor:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "waiting"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("loadingdotslabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("buttonContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("okconfirm:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("loadingdotslabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "...", "..", "." ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("youvotedfor:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="root" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="buttonContainer" parent="." instance=ExtResource( 2 )]
+visible = false
 margin_left = -2.02905
 margin_top = 25.1579
 margin_right = 535.971
 margin_bottom = 841.158
 
 [node name="okconfirm" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 72.2297, 857.673 )
+
+[node name="loadingdotslabel" type="Label" parent="."]
+margin_left = 209.649
+margin_top = 804.0
+margin_right = 345.649
+margin_bottom = 955.0
+custom_fonts/font = SubResource( 1 )
+text = "."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "starting"
+anims/starting = SubResource( 2 )
+anims/waiting = SubResource( 3 )
+
+[node name="youvotedfor" type="Label" parent="."]
+margin_left = 0.621582
+margin_top = 366.19
+margin_right = 538.622
+margin_bottom = 760.19
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.992157, 1, 0.686275, 1 )
+text = "You voted for:
+potatomaster9000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="okconfirm" to="." method="_on_okconfirm_pressed"]

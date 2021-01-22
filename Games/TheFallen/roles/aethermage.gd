@@ -23,6 +23,7 @@ func _ready():
 	$buttonContainer.visible = false
 
 	for player in vars.playerInfos:
+		if player != vars.get_tree().get_network_unique_id():
 			var playerbutton = PLAYERBUTTON.instance()
 			$buttonContainer.add_child(playerbutton)
 			playerbutton.playerid = player
@@ -52,7 +53,7 @@ func _on_okconfirm_pressed():
 		$FallenIcons.visible = true
 		$info.visible = true
 		$buttonContainer.visible = false
-		vars.rpc_id(1, "set_untaken_role", vars.LeftoverRoles.find(unusedrole), oldrole)
+		vars.rpc_id(1, "set_untaken_role", unusedrole, oldrole)
 		yield(get_tree().create_timer(0.4), "timeout")
 		state = "confirm"
 	elif state == "confirm":

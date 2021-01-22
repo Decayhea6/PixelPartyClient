@@ -5,7 +5,7 @@ var newrole = ""
 
 func _ready():
 #	next line for debugging
-	vars.LeftoverRoles = ["seer", "theif", "voidling", "wizard"]
+#	vars.LeftoverRoles = ["seer", "theif", "voidling", "wizard"]
 #
 	
 	Input.vibrate_handheld(200)
@@ -22,7 +22,7 @@ func _on_screentapped_pressed():
 		$FallenIcons.play(newrole)
 		$AnimationPlayer.play("transform")
 		$FallenIcons.visible = true
-		vars.rpc_id(1, "set_untaken_role", vars.LeftoverRoles.find(newrole), vars.playerInfos[vars.get_tree().get_network_unique_id()]["FallenRole"])
+		vars.rpc_id(1, "set_untaken_role", newrole, vars.playerInfos[vars.get_tree().get_network_unique_id()]["FallenRole"])
 		vars.rpc_id(1, "set_role", vars.get_tree().get_network_unique_id(), newrole)
 		state = "confirm"
 func _on_readybutton_pressed():
